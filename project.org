@@ -1,0 +1,5 @@
+#+title: reddit-to-org — Gather Reddit saved items and output them for Org-mode
+#+author: Seylerius
+
+I have too much shit saved under Reddit. Only way to deal is programmatically.
+
