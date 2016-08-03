@@ -3,3 +3,54 @@
 
 I have too much shit saved under Reddit. Only way to deal is programmatically.
 
+* Reddit's data
+
+** Reddit API
+
+*** TODO Pick an API wrapper
+
+I'm basically looking at [[https://clojars.org/mynx][mynx]] and [[https://clojars.org/markgunnels/reddit.clj][reddit.clj]], and the former looks more mature.
+
+**** TODO Identify whether mynx paginates
+
+This is one of my main factors in the decision. Mynx is probably going to win either way, but if it unpaginates, then the win is automatic.
+
+*** TODO Parse different content types
+
+There are a few different content types in the saved Reddit posts: Links, Text posts, and Comments. They have a few fields in common:
+
++ ~:subreddit~
++ ~:link_id~
+
+**** TODO Parse Links
+
+These are links to something other than the post itself. Sometimes they're to another Reddit post, but mostly they're external. 
+
++ ~:domain~
++ ~:subreddit~
++ ~:url~
++ ~:title~
++ ~:id~
+
+**** TODO Parse Text posts
+
+These are bodies of markdown text. They link to themselves.
+
++ ~:domain~
++ ~:subreddit~
++ ~:url~
++ ~:title~
++ ~:selftext~
++ ~:id~
+
+**** TODO Parse Comments
+
+These are comments on existing posts. Their keys are different.
+
++ ~:subreddit~
++ ~:link_title~
++ ~:body~
++ ~:link_url~
++ ~:link_id~
++ ~:id~
++ ~:parent_id~
