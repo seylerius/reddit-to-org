@@ -7,13 +7,19 @@ I have too much shit saved under Reddit. Only way to deal is programmatically.
 
 ** Reddit API
 
-*** TODO Pick an API wrapper
+*** DONE Pick an API wrapper
+CLOSED: [2016-08-03 Wed 20:49]
 
-I'm basically looking at [[https://clojars.org/mynx][mynx]] and [[https://clojars.org/markgunnels/reddit.clj][reddit.clj]], and the former looks more mature.
+I'm basically looking at +mynx and+ [[https://clojars.org/markgunnels/reddit.clj][reddit.clj]], +and the former looks more mature+.
 
-**** TODO Identify whether mynx paginates
+Yeah, going to have to go reddit.clj. Mynx unfortunately doesn't support the ~saved~ endpoint.
+
+**** DONE Identify whether mynx paginates
+CLOSED: [2016-08-03 Wed 20:48]
 
 This is one of my main factors in the decision. Mynx is probably going to win either way, but if it unpaginates, then the win is automatic.
+
+Yep, infinite lazy sequences. This is a point in its favor, and in favor of adopting it later to correct its deficiencies.
 
 *** TODO Parse different content types
 
