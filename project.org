@@ -54,3 +54,21 @@ These are comments on existing posts. Their keys are different.
 + ~:link_id~
 + ~:id~
 + ~:parent_id~
+
+* Interface
+
+** TODO Command line interface
+
+*** TODO Pick a library
+
+**** TODO Options?
+
+*** TODO Input
+
+**** TODO Auth
+
+**** TODO Existing data
+
+*** TODO Output
+
+**** TODO Destination org-file
