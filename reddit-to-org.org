@@ -3,6 +3,18 @@
 
 I have too much shit saved under Reddit. Only way to deal is programmatically.
 
+* Workspace
+
+#+BEGIN_SRC emacs-lisp
+
+  (clj-workspace "~/src/reddit-to-org/src/com/seriouslyseylerius/reddit_to_org.clj"
+		 "~/src/reddit-to-org/project.clj")
+
+#+END_SRC
+
+#+RESULTS:
+: #<process nrepl-server>
+
 * Reddit's data
 
 ** Reddit API
@@ -21,14 +33,22 @@ This is one of my main factors in the decision. Mynx is probably going to win ei
 
 Yep, infinite lazy sequences. This is a point in its favor, and in favor of adopting it later to correct its deficiencies.
 
-*** TODO Parse different content types
+*** TODO [#L] Figure out API pagination
+
+The reddit api requires both the count and last seen item to get the next page of data. They have to match, or it won't continue. Looks like I'll have to string multiple calls together until I get to the end. 
+
+Best guess is that it'll return ~nil~ if there's nothing left to get.
+
+Tip from Clojurians (props to @hiredman) for dealing with the API: http://dev.clojure.org/jira/browse/CLJ-1906
+
+*** TODO [#L] Parse different content types
 
 There are a few different content types in the saved Reddit posts: Links, Text posts, and Comments. They have a few fields in common:
 
 + ~:subreddit~
 + ~:link_id~
 
-**** TODO Parse Links
+**** TODO [#L] Parse Links
 
 These are links to something other than the post itself. Sometimes they're to another Reddit post, but mostly they're external. 
 
@@ -38,7 +58,7 @@ These are links to something other than the post itself. Sometimes they're to an
 + ~:title~
 + ~:id~
 
-**** TODO Parse Text posts
+**** TODO [#L] Parse Text posts
 
 These are bodies of markdown text. They link to themselves.
 
@@ -49,7 +69,7 @@ These are bodies of markdown text. They link to themselves.
 + ~:selftext~
 + ~:id~
 
-**** TODO Parse Comments
+**** TODO [#L] Parse Comments
 
 These are comments on existing posts. Their keys are different.
 
@@ -63,18 +83,18 @@ These are comments on existing posts. Their keys are different.
 
 * Interface
 
-** TODO Command line interface
+** TODO [#L] Command line interface
 
-*** TODO Pick a library
+*** TODO [#L] Pick a library
 
-**** TODO Options?
+**** TODO [#L] Options?
 
-*** TODO Input
+*** TODO [#L] Input
 
-**** TODO Auth
+**** TODO [#L] Auth
 
-**** TODO Existing data
+**** TODO [#L] Existing data
 
-*** TODO Output
+*** TODO [#L] Output
 
-**** TODO Destination org-file
+**** TODO [#L] Destination org-file
